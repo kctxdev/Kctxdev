@@ -23,9 +23,22 @@
 <img src="https://img.shields.io/badge/LOCATION-GUARULHOS%20%7C%20SP-8A2BE2?style=for-the-badge&labelColor=0D1117"/>
 <img src="https://img.shields.io/badge/MODE-OPEN%20TO%20WORK-00FF9C?style=for-the-badge&labelColor=0D1117"/>
 
+<br/><br/>
+
+<img src="https://komarev.com/ghpvc/?username=kctxdev&label=PROFILE%20VIEWS&color=00f0ff&style=for-the-badge&labelColor=0D1117"/>
+<img src="https://img.shields.io/github/followers/kctxdev?label=FOLLOWERS&style=for-the-badge&color=8A2BE2&labelColor=0D1117"/>
+
+<br/><br/>
+
+<img src="https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif" width="700">
+
 </div>
 
 <br/>
+
+<div align="center">
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=22&duration=2000&pause=500&color=8A2BE2&center=true&vCenter=true&width=500&lines=%3E+INICIALIZANDO+MODULO...;%3E+SOBRE+MIM" alt="section title" />
+</div>
 
 ## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"/> SOBRE MIM
 
@@ -47,9 +60,13 @@ idiomas:       [Portugues - Nativo, Ingles - Intermediario]
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 ## <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="30"/> TECH STACK
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="100">
+</div>
 
 <div align="center">
 
@@ -84,7 +101,7 @@ idiomas:       [Portugues - Nativo, Ingles - Intermediario]
 
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 ## <img src="https://media.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.gif" width="30"/> FERRAMENTAS
 
@@ -92,9 +109,13 @@ idiomas:       [Portugues - Nativo, Ingles - Intermediario]
 <img src="https://skillicons.dev/icons?i=aws,terraform,git,github,githubactions,linux,ubuntu,py,bash,vscode,postman,figma&theme=dark" />
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 ## <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="30"/> PROJETOS EM DESTAQUE
+
+<div align="center">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=2500&pause=600&color=00FF9C&center=true&vCenter=true&width=550&lines=carregando+reposit%C3%B3rios...;renderizando+cards..." alt="loading projects" />
+</div>
 
 <div align="center">
 
@@ -171,7 +192,7 @@ idiomas:       [Portugues - Nativo, Ingles - Intermediario]
 
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 ## <img src="https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif" width="30"/> OBJETIVOS ATUAIS
 
@@ -188,7 +209,7 @@ johnata@devsecops:~$ echo $STATUS
 > Disponível para novas oportunidades PJ / CLT em Cloud & Security
 ```
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 ## <img src="https://media.giphy.com/media/L1R1tvL5B5v2yPfV0K/giphy.gif" width="30"/> GITHUB ANALYTICS
 
@@ -207,7 +228,7 @@ johnata@devsecops:~$ echo $STATUS
 
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 ## <img src="https://media.giphy.com/media/artj92V8o75VPL7AeQ/giphy.gif" width="30"/> TROFÉUS
 
@@ -215,7 +236,7 @@ johnata@devsecops:~$ echo $STATUS
 <img src="https://github-profile-trophy.vercel.app/?username=kctxdev&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&row=1&column=7"/>
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 ## <img src="https://media.giphy.com/media/xTiTnHXbRoaZ1B1Mo8/giphy.gif" width="30"/> CONTRIBUTION SNAKE
 
@@ -225,11 +246,15 @@ johnata@devsecops:~$ echo $STATUS
 
 > ⚙️ **Ativação:** essa animação depende de um GitHub Action rodando neste repositório. O arquivo de workflow (`snake.yml`) está incluído junto com este README — basta commitar em `.github/workflows/snake.yml` que ela é gerada automaticamente.
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 ## <img src="https://media.giphy.com/media/LMt9638dO8dftAjtco/giphy.gif" width="30"/> CONECTE-SE COMIGO
 
 <div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/221857659-26e8dfff-6f4b-4d59-8d40-c56dfaf5b4bf.gif" width="80">
+
+<br/>
 
 <a href="https://www.linkedin.com/in/SEU-LINK-AQUI" target="_blank">
 <img src="https://img.shields.io/badge/LinkedIn-00F0FF?style=for-the-badge&logo=linkedin&logoColor=black"/>
@@ -246,15 +271,13 @@ johnata@devsecops:~$ echo $STATUS
 
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656152-8952deb6-a06d-4842-a8b0-46b7cbd4bc45.gif" width="100%" height="4">
 
 <div align="center">
 
-```
-[SYSTEM MESSAGE] Obrigado pela visita, unidade humana.
-[SYSTEM MESSAGE] Este perfil é atualizado continuamente.
-[END OF TRANSMISSION] ...........................
-```
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=2200&pause=700&color=00F0FF&center=true&vCenter=true&width=600&lines=Obrigado+pela+visita%2C+unidade+humana.;Este+perfil+%C3%A9+atualizado+continuamente.;%5BEND+OF+TRANSMISSION%5D+..........................." alt="footer message" />
+
+<br/><br/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2C5364,50:203A43,100:0F2027&height=120&section=footer"/>
 
