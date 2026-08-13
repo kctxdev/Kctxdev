@@ -1,6 +1,12 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:203A43,100:2C5364&height=280&section=header&text=JOHNATA%20WILLIAMY&fontSize=55&fontColor=00F0FF&animation=fadeIn&fontAlignY=38&desc=Cloud%20%26%20DevSecOps%20%7C%20Systems%20Online&descAlignY=55&descAlign=50" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:203A43,100:2C5364&height=220&section=header" width="100%"/>
+
+<br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=45&duration=2500&pause=1000&color=00F0FF&center=true&vCenter=true&width=700&height=70&lines=JOHNATA+WILLIAMY" alt="name" />
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3500&pause=1000&color=8A2BE2&center=true&vCenter=true&width=600&lines=Cloud+%26+Cloud+Security+%7C+Systems+Online" alt="tagline" />
 
 <br/>
 
