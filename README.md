@@ -117,127 +117,26 @@ idiomas:       [Portugues - Nativo, Ingles - Intermediario]
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=2500&pause=600&color=00FF9C&center=true&vCenter=true&width=550&lines=carregando+reposit%C3%B3rios...;renderizando+cards..." alt="loading projects" />
 </div>
 
-<br/>
-
 <div align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=18&duration=1800&pause=900&color=00F0FF&center=true&vCenter=true&width=500&lines=%3E+PROJETO+EM+DESTAQUE" alt="flagship project" />
-
-</div>
-
-<table width="100%">
-<tr>
-<td width="100%">
-
-<div align="center">
-
-### 🤖 Caçador de Vagas Pro — Telegram Bot
-
-<img src="https://img.shields.io/badge/STATUS-EM%20PRODUÇÃO-00FF9C?style=for-the-badge&labelColor=0D1117"/>
-<img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B&labelColor=0D1117"/>
-<img src="https://img.shields.io/badge/Telegram-Bot%20API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0D1117"/>
-
-</div>
-
-**Bot de Telegram focado em otimizar a busca por empregos.** Atua como um agregador inteligente de vagas, vasculhando múltiplos sites de emprego no Brasil simultaneamente e entregando as melhores oportunidades diretamente no chat do usuário — com sistema de cache e filtro de precisão.
-
-<br/>
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="50%">
 
-**✨ Funcionalidades**
+### 🤖 Caçador de Vagas Pro — Telegram Bot
+**Bot que agrega vagas de emprego de múltiplos sites do Brasil simultaneamente, entregando as melhores oportunidades direto no chat do usuário.**
 
-- 🔎 **Busca Multi-Sites** — vasculha Vagas.com, Indeed, InfoJobs, Catho, Trabalha Brasil e outras plataformas simultaneamente
-- 🎯 **Filtro Sniper** — elimina falsos-positivos e "vagas recomendadas" genéricas, garantindo que a palavra-chave do cargo esteja no título da vaga
-- ⚡ **Cache Inteligente (SQLite)** — armazena buscas por 30 minutos; buscas repetidas respondem instantaneamente, economizando banda e evitando bloqueios por excesso de requisições
-- 📍 **Geolocalização Automática** — usa a API `ipapi` para sugerir a localização do usuário via IP, agilizando a busca regional
-- 🖼️ **Banners Visuais Dinâmicos** — gera tags via Shields.io indicando a fonte de origem de cada vaga direto no chat
+`Python` `pyTelegramBotAPI` `BeautifulSoup4` `SQLite3`
 
-</td>
-<td width="50%" valign="top">
-
-**🛠️ Stack Técnica**
-
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/pyTelegramBotAPI-26A5E4?style=flat-square&logo=telegram&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/BeautifulSoup4-4B8BBE?style=flat-square&logo=python&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/Requests-000000?style=flat-square&logo=python&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/SQLite3-003B57?style=flat-square&logo=sqlite&logoColor=white"/>
-
-**🧠 Arquitetura**
-
-```
-Usuário → Telegram Bot API
-   → Motor de Scraping (BS4 + Requests)
-   → Filtro Sniper (validação por keyword)
-   → Cache SQLite (janela de 30 min)
-   → Resposta formatada + banners Shields.io
-```
-
-</td>
-</tr>
-</table>
-
-<br/>
-
-<details>
-<summary><b>🚀 Como rodar o projeto localmente</b></summary>
-<br/>
-
-```bash
-# 1. Clone o repositório
-git clone https://github.com/kctxdev/cacador-de-vagas-bot.git
-cd cacador-de-vagas-bot
-
-# 2. Crie e ative um ambiente virtual
-python -m venv venv
-source venv/bin/activate      # Linux/Mac
-venv\Scripts\activate         # Windows
-
-# 3. Instale as dependências
-pip install -r requirements.txt
-
-# 4. Configure o token do bot
-# Crie um arquivo .env com:
-# TELEGRAM_TOKEN=seu_token_aqui
-
-# 5. Execute o bot
-python bot.py
-```
-
-> 💡 O token do bot é gerado gratuitamente através do [@BotFather](https://t.me/BotFather) no Telegram.
-
-</details>
-
-<div align="center">
+- 🎯 Filtro Sniper contra vagas falso-positivas
+- ⚡ Cache SQLite (30 min) para respostas instantâneas
+- 📍 Geolocalização automática via IP (ipapi)
 
 <a href="https://github.com/kctxdev/cacador-de-vagas-bot">
 <img src="https://img.shields.io/badge/VER_REPOSITÓRIO-26A5E4?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
-<a href="https://github.com/kctxdev/cacador-de-vagas-bot/stargazers">
-<img src="https://img.shields.io/github/stars/kctxdev/cacador-de-vagas-bot?style=for-the-badge&color=00F0FF&labelColor=0D1117"/>
-</a>
-
-</div>
 
 </td>
-</tr>
-</table>
-
-</div>
-
-<br/>
-
-<div align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=16&duration=1800&pause=900&color=8A2BE2&center=true&vCenter=true&width=500&lines=%3E+OUTROS+PROJETOS" alt="other projects" />
-</div>
-
-<div align="center">
-
-<table>
-<tr>
 <td width="50%">
 
 ### 🛰️ Cloud Guard — Governança Automática & FinOps
@@ -254,6 +153,9 @@ python bot.py
 </a>
 
 </td>
+</tr>
+
+<tr>
 <td width="50%">
 
 ### 🔐 Pipeline CI/CD DevSecOps
@@ -270,9 +172,6 @@ python bot.py
 </a>
 
 </td>
-</tr>
-
-<tr>
 <td width="50%">
 
 ### 🌐 AWS Secure VPC (Terraform)
@@ -288,6 +187,9 @@ python bot.py
 </a>
 
 </td>
+</tr>
+
+<tr>
 <td width="50%">
 
 ### 📊 AWS Monitoramento (Terraform)
@@ -302,6 +204,9 @@ python bot.py
 <a href="https://github.com/kctxdev/aws-monitoramento-terraform">
 <img src="https://img.shields.io/badge/VER_REPOSITÓRIO-FF4F8B?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
+
+</td>
+<td width="50%">
 
 </td>
 </tr>
