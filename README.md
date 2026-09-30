@@ -335,12 +335,9 @@ flowchart LR
 <a href="https://wa.me/5511959445413" target="_blank">
 <img src="https://img.shields.io/badge/WhatsApp-00FF9C?style=for-the-badge&logo=whatsapp&logoColor=black" alt="WhatsApp"/>
 </a>
-<a href="https://SEU-PORTFOLIO.com" target="_blank">
+<a href="johnataa.vercel.app" target="_blank">
 <img src="https://img.shields.io/badge/johnata.dev-FF9900?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Portfólio johnata.dev"/>
 </a>
-<a href="mailto:johnataichigo56@gmail.com">
-<img src="https://img.shields.io/badge/Gmail-8A2BE2?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
-</a> 
 <br/><br/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=2200&pause=700&color=00F0FF&center=true&vCenter=true&width=600&lines=Obrigado+pela+visita%2C+unidade+humana.;Este+perfil+%C3%A9+atualizado+continuamente.;%5BEND+OF+TRANSMISSION%5D" alt="footer message" />
