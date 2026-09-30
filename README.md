@@ -302,43 +302,39 @@ flowchart LR
 
 ## 🐍 CONTRIBUTION SNAKE
 
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake.svg" />
-  <img alt="Contribution snake" src="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
-</picture>
-</div>
+name: Generate Snake
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
-## 📡 CONECTE-SE COMIGO
+permissions:
+  contents: write
 
-<div align="center">
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Gerar snake a partir das contribuições
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-<!-- Descomente e troque pelo seu link real do LinkedIn:
-<a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank">
-<img src="https://img.shields.io/badge/LinkedIn-00F0FF?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn"/>
-</a>
--->
-<!-- Descomente e coloque o link do seu portfólio:
-<a href="https://SEU-PORTFOLIO.com" target="_blank">
-<img src="https://img.shields.io/badge/Portf%C3%B3lio-FF9900?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Portfólio"/>
-</a>
--->
-<a href="mailto:johnataichigo56@gmail.com">
-<img src="https://img.shields.io/badge/Gmail-8A2BE2?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
-</a>
-<a href="https://github.com/kctxdev" target="_blank">
-<img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=00F0FF" alt="GitHub"/>
-</a>
-<a href="https://wa.me/5511959445413" target="_blank">
-<img src="https://img.shields.io/badge/WhatsApp-00FF9C?style=for-the-badge&logo=whatsapp&logoColor=black" alt="WhatsApp"/>
-</a>
-
-<br/><br/>
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=2200&pause=700&color=00F0FF&center=true&vCenter=true&width=600&lines=Obrigado+pela+visita%2C+unidade+humana.;Este+perfil+%C3%A9+atualizado+continuamente.;%5BEND+OF+TRANSMISSION%5D" alt="footer message" />
+      - name: Publicar na branch output
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2C5364,50:203A43,100:0F2027&height=120&section=footer" width="100%" alt="footer"/>
 
