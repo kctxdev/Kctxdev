@@ -52,6 +52,30 @@ idiomas:       [Português - Nativo, Inglês - Intermediário]
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
 
+## 🔭 AGORA
+
+```bash
+johnata@devsecops:~$ cat now.txt
+
+🎓 estudando   → AWS CLF-C02, Terraform avançado (modules), Kubernetes & Container Security
+🛠️ construindo → automações de governança e FinOps na AWS, pipelines CI/CD seguros
+☕ explorando  → Java + Spring Boot com IA
+📫 buscando    → oportunidades PJ / CLT em Cloud & Security
+```
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+
+## 🧭 ÁREAS DE ATUAÇÃO
+
+| Área | O que eu entrego |
+|---|---|
+| ☁️ **Cloud & IaC** | VPC, EC2, S3, IAM e Route53 provisionados com Terraform: versionado, auditável e repetível |
+| 🛡️ **Segurança & Governança** | CloudTrail, GuardDuty, KMS e MFA para auditoria, detecção de ameaças e criptografia |
+| 🔁 **CI/CD seguro** | Pipelines com GitHub Actions, gestão de segredos e menor privilégio |
+| 💰 **FinOps** | Monitoramento de custos e desligamento automático de recursos ociosos |
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+
 ## 🧰 TECH STACK
 
 <div align="center">
@@ -79,6 +103,12 @@ idiomas:       [Português - Nativo, Inglês - Intermediário]
 <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
 <img src="https://img.shields.io/badge/AWS_CLI-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS CLI"/>
 <img src="https://img.shields.io/badge/CI%2FCD-000000?style=for-the-badge&logo=githubactions&logoColor=00F0FF" alt="CI/CD"/>
+
+**💻 Linguagens & Frameworks**
+
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+<img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot"/>
+<img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash"/>
 
 **🖥️ Sistemas & Redes**
 
@@ -174,14 +204,34 @@ idiomas:       [Português - Nativo, Inglês - Intermediário]
 </tr>
 
 <tr>
-<td colspan="2" align="center" valign="top">
+<td width="50%" valign="top">
+
+### 🎙️ Finance AI Voice API
+**API de orçamento financeiro controlada por comandos de voz, com transcrição, Tool Calling e resposta em áudio.**
+
+`Java` `Spring Boot` `Spring AI`
+
+- 🗣️ Comandos de voz transcritos e interpretados por IA
+- 🧰 Tool Calling para executar ações no orçamento
+- 🔊 Resposta por síntese de voz
+
+<!-- Descomente e coloque o link real do repositório:
+<a href="https://github.com/kctxdev/NOME-DO-REPO">
+<img src="https://img.shields.io/badge/VER_REPOSITÓRIO-ED8B00?style=for-the-badge&logo=github&logoColor=white" alt="Repositório Finance AI Voice API"/>
+</a>
+-->
+
+</td>
+<td width="50%" valign="top">
 
 ### 🤖 Caçador de Vagas Pro — Telegram Bot
 **Bot que agrega vagas de emprego de vários sites do Brasil ao mesmo tempo, entregando as melhores oportunidades direto no chat.**
 
 `Python` `pyTelegramBotAPI` `BeautifulSoup4` `SQLite3`
 
-🎯 Filtro Sniper contra vagas falso-positivas &nbsp;•&nbsp; ⚡ Cache SQLite (30 min) para respostas instantâneas &nbsp;•&nbsp; 📍 Geolocalização automática via IP
+- 🎯 Filtro Sniper contra vagas falso-positivas
+- ⚡ Cache SQLite (30 min) para respostas instantâneas
+- 📍 Geolocalização automática via IP
 
 <a href="https://github.com/kctxdev/cacador-de-vagas-bot">
 <img src="https://img.shields.io/badge/VER_REPOSITÓRIO-26A5E4?style=for-the-badge&logo=github&logoColor=white" alt="Repositório Caçador de Vagas"/>
@@ -206,6 +256,31 @@ johnata@devsecops:~$ cat objetivos_2026.txt
 
 johnata@devsecops:~$ echo $STATUS
 > Disponível para novas oportunidades PJ / CLT em Cloud & Security
+```
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+
+## 📜 CERTIFICAÇÕES
+
+<div align="center">
+<img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner%20(CLF--C02)-Em%20prepara%C3%A7%C3%A3o-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white&labelColor=232F3E" alt="AWS CLF-C02 em preparação"/>
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+
+## 🏗️ COMO O CLOUD GUARD FUNCIONA
+
+Fluxo simplificado da remediação automática:
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart LR
+    A[Evento na conta AWS] --> B[CloudTrail]
+    B --> C[EventBridge]
+    C --> D[Lambda de remediação]
+    D --> E[Bucket S3 público → privado]
+    D --> F[Tags de Centro de Custo aplicadas]
+    D --> G[Recurso ocioso desligado]
 ```
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
@@ -240,6 +315,11 @@ johnata@devsecops:~$ echo $STATUS
 <!-- Descomente e troque pelo seu link real do LinkedIn:
 <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank">
 <img src="https://img.shields.io/badge/LinkedIn-00F0FF?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn"/>
+</a>
+-->
+<!-- Descomente e coloque o link do seu portfólio:
+<a href="https://SEU-PORTFOLIO.com" target="_blank">
+<img src="https://img.shields.io/badge/Portf%C3%B3lio-FF9900?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Portfólio"/>
 </a>
 -->
 <a href="mailto:johnataichigo56@gmail.com">
