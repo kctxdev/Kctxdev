@@ -300,10 +300,10 @@ flowchart LR
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
 
-## 🏆 CONQUISTAS
+## 📊 ATIVIDADE
 
 <div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=kctxdev&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=12&margin-h=12" alt="Troféus GitHub"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=kctxdev&bg_color=0D1117&color=00F0FF&line=8A2BE2&point=00FF9C&area=true&area_color=8A2BE2&hide_border=true&title_color=00F0FF" alt="Gráfico de atividade" width="100%"/>
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
