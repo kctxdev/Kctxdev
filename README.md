@@ -300,33 +300,6 @@ flowchart LR
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
 
-## 📊 ATIVIDADE DOS PROJETOS
-
-<div align="center">
-
-<a href="https://github.com/kctxdev/cloudguard-aws-security">
-<img src="https://img.shields.io/github/last-commit/kctxdev/cloudguard-aws-security?label=CLOUD%20GUARD&style=for-the-badge&color=00F0FF&labelColor=0D1117" alt="Último commit Cloud Guard"/>
-</a>
-<a href="https://github.com/kctxdev/aws-cicd-devsecops">
-<img src="https://img.shields.io/github/last-commit/kctxdev/aws-cicd-devsecops?label=CI%2FCD&style=for-the-badge&color=8A2BE2&labelColor=0D1117" alt="Último commit CI/CD"/>
-</a>
-
-<br/>
-
-<a href="https://github.com/kctxdev/aws-secure-vpc-terraform">
-<img src="https://img.shields.io/github/last-commit/kctxdev/aws-secure-vpc-terraform?label=SECURE%20VPC&style=for-the-badge&color=00FF9C&labelColor=0D1117" alt="Último commit Secure VPC"/>
-</a>
-<a href="https://github.com/kctxdev/aws-monitoramento-terraform">
-<img src="https://img.shields.io/github/last-commit/kctxdev/aws-monitoramento-terraform?label=MONITORAMENTO&style=for-the-badge&color=FF4F8B&labelColor=0D1117" alt="Último commit Monitoramento"/>
-</a>
-<a href="https://github.com/kctxdev/cacador-de-vagas-bot">
-<img src="https://img.shields.io/github/last-commit/kctxdev/cacador-de-vagas-bot?label=VAGAS%20BOT&style=for-the-badge&color=26A5E4&labelColor=0D1117" alt="Último commit Caçador de Vagas"/>
-</a>
-
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
-
 ## 🐍 CONTRIBUTION SNAKE
 
 <div align="center">
