@@ -96,7 +96,7 @@ idiomas:       [Português - Nativo, Inglês - Intermediário]
 ## 🛠️ FERRAMENTAS
 
 <div align="center">
-<img src="https://skillicons.dev/icons?i=aws,terraform,git,github,githubactions,linux,ubuntu,py,bash,vscode,postman,figma&theme=dark" alt="ferramentas" />
+<img src="https://skillicons.dev/icons?i=aws,terraform,git,github,githubactions,linux,ubuntu,java,bash,vscode,postman,figma&theme=dark" alt="ferramentas" />
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
@@ -221,18 +221,6 @@ johnata@devsecops:~$ echo $STATUS
 
 <img src="https://streak-stats.demolab.com/?user=kctxdev&theme=tokyonight&hide_border=true&background=0D1117&stroke=00F0FF&ring=8A2BE2&fire=00FF9C&currStreakLabel=00F0FF" alt="Streak"/>
 
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=kctxdev&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=00F0FF&line=8A2BE2&point=00FF9C" width="100%" alt="Gráfico de atividade"/>
-
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
-
-## 🏆 TROFÉUS
-
-<div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=kctxdev&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" alt="Troféus"/>
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
