@@ -335,7 +335,7 @@ flowchart LR
 <a href="https://wa.me/5511959445413" target="_blank">
 <img src="https://img.shields.io/badge/WhatsApp-00FF9C?style=for-the-badge&logo=whatsapp&logoColor=black" alt="WhatsApp"/>
 </a>
-<a href="johnataa.vercel.app" target="_blank">
+<a href="https://johnataa.vercel.app" target="_blank">
 <img src="https://img.shields.io/badge/johnata.dev-FF9900?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Portfólio johnata.dev"/>
 </a>
 <br/><br/>
