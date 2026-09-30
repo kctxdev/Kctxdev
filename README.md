@@ -301,7 +301,6 @@ flowchart LR
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
 
 ## 🐍 CONTRIBUTION SNAKE
-
 name: Generate Snake
 
 on:
@@ -329,12 +328,15 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - name: Publicar na branch output
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dist
+          git init -b output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: atualiza snake"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push -f origin output
 ## 📡 CONECTE-SE COMIGO
 
 <div align="center">
