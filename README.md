@@ -300,6 +300,14 @@ flowchart LR
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
 
+## 🏆 CONQUISTAS
+
+<div align="center">
+<img src="https://github-profile-trophy.vercel.app/?username=kctxdev&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=12&margin-h=12" alt="Troféus GitHub"/>
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+
 ## 🐍 CONTRIBUTION SNAKE
 
 <div align="center">
