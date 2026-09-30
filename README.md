@@ -302,6 +302,16 @@ flowchart LR
 
 ## 🐍 CONTRIBUTION SNAKE
 
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake.svg" />
+  <img alt="Contribution snake" src="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
+</picture>
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+
 ## 📡 CONECTE-SE COMIGO
 
 <div align="center">
