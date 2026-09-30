@@ -9,25 +9,28 @@ on:
       - main
 
 permissions:
-Para deixar a documentação do seu projeto impecável e profissional no GitHub, aqui estão algumas dicas essenciais de formatação e estrutura para o **README.md**:
+  contents: write
 
-## Estrutura Recomendada
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Gerar snake a partir das contribuições
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-1. **Título e Descrição:** Nome do projeto e uma frase clara explicando o que ele faz.
-2. **Badges (Opcional):** Status do projeto, linguagem, licença.
-3. **Funcionalidades:** Lista com os principais recursos.
-4. **Tecnologias Utilizadas:** Linguagens, frameworks e bibliotecas.
-5. **Pré-requisitos e Instalação:** Passo a passo para rodar o projeto localmente.
-6. **Como Usar:** Exemplos práticos de uso ou comandos principais.
-7. **Licença / Contribuição:** Informações sobre como contribuir ou termos de uso.
-
----
-
-## Dicas Rápidas de Markdown
-
-* **Títulos:** Use `#` para o título principal, `##` para seções e `###` para subseções.
-* **Listas:** Use `-` ou `*` para tópicos e `1.`, `2.` para passos sequenciais.
-* **Blocos de Código:** Envolva comandos ou trechos de código em três crases indicando a linguagem:
-  ```bash
-  npm install
-  npm start
+      - name: Publicar na branch output
+        run: |
+          cd dist
+          git init -b output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: atualiza snake"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push -f origin output
