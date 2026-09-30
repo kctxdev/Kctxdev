@@ -25,6 +25,9 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - name: Publicar na branch output
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
           cd dist
           git init -b output
@@ -32,5 +35,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "chore: atualiza snake"
-          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git"
           git push -f origin output
