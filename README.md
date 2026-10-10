@@ -39,9 +39,8 @@
 ```yaml
 > whoami
 
-nome:          Johnata Williamy Sousa da Silva
+nome:          Johnata Silva
 cargo:         Analista Júnior em Cloud & DevSecOps
-localizacao:   Guarulhos - SP, Brasil
 foco:          Segurança da Informação & Cloud Computing (AWS)
 formacao:      Cursando Técnico/Superior em Segurança da Informação
 missao:        Construir infraestruturas em nuvem seguras, auditáveis
