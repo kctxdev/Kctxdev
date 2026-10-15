@@ -36,9 +36,18 @@
 
 ## 👤 SOBRE MIM
 
-<div align="center">
-<img src="./face-scan.svg" width="720" alt="Scan facial e apresentação: Johnata Silva, Analista Júnior em Cloud & DevSecOps"/>
-</div>
+```yaml
+> whoami
+
+nome:          Johnata Silva
+cargo:         Analista Júnior em Cloud & DevSecOps
+foco:          Segurança da Informação & Cloud Computing (AWS)
+formacao:      Cursando Técnico/Superior em Segurança da Informação
+missao:        Construir infraestruturas em nuvem seguras, auditáveis
+               e automatizadas, aplicando Security by Design e o
+               princípio do Menor Privilégio (Least Privilege).
+idiomas:       [Português - Nativo, Inglês - Intermediário]
+```
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
 
