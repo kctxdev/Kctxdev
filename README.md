@@ -36,18 +36,31 @@
 
 ## 👤 SOBRE MIM
 
-```yaml
-> whoami
+<div align="center">
+<img src="./face-scan.svg" width="720" alt="Scan facial e apresentação: Johnata Silva, Analista Júnior em Cloud & DevSecOps"/>
+</div>
 
-nome:          Johnata Williamy Sousa da Silva
-cargo:         Analista Júnior em Cloud & DevSecOps
-localizacao:   Guarulhos - SP, Brasil
-foco:          Segurança da Informação & Cloud Computing (AWS)
-formacao:      Cursando Técnico/Superior em Segurança da Informação
-missao:        Construir infraestruturas em nuvem seguras, auditáveis
-               e automatizadas, aplicando Security by Design e o
-               princípio do Menor Privilégio (Least Privilege).
-idiomas:       [Português - Nativo, Inglês - Intermediário]
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+
+## 📊 EM NÚMEROS
+
+```bash
+johnata@devsecops:~$ cat impacto.txt
+
+projetos publicados ........... 6
+módulos Terraform (CloudGuard)  6   → VPC · IAM · EC2 · S3 · Monitoring · Security Response
+ambientes isolados ............ 2   → dev e prod (prod com aprovação manual)
+resposta a incidentes ......... 3   ações automáticas (isolar, coletar evidência, alertar)
+portas SSH expostas ........... 0   → acesso somente via SSM Session Manager
+IPs públicos nas instâncias ... 0
+credenciais no código ......... 0   → deploy via OIDC e Secrets Manager
+deploys manuais ............... 0   → 100% via GitHub Actions
+auditoria de API (CloudTrail) . 100% das chamadas, em todas as regiões
+bloqueio de acesso público S3 . 100%
+criptografia em repouso ....... AES-256 (S3 e volumes EC2)
+alerta de custo ............... a partir de US$ 10
+sites de vagas consultados .... 5+  em paralelo
+cache do bot .................. 30 min
 ```
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
@@ -108,6 +121,7 @@ johnata@devsecops:~$ cat now.txt
 
 <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
 <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot"/>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
 <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash"/>
 
 **🖥️ Sistemas & Redes**
@@ -137,14 +151,18 @@ johnata@devsecops:~$ cat now.txt
 <tr>
 <td width="50%" valign="top">
 
-### 🛰️ Cloud Guard — Governança & FinOps
-**Plataforma orientada a eventos para remediação em tempo real de riscos de segurança e desperdício financeiro na AWS.**
+### 🛰️ Cloud Guard — Detecção, Resposta & FinOps
+**Plataforma orientada a eventos para detecção, contenção e remediação de riscos de segurança e desperdício financeiro na AWS.**
 
-`AWS Lambda (Python)` `EventBridge` `CloudTrail` `Terraform`
+`Terraform` `GuardDuty` `AWS Lambda (Python)` `EventBridge` `CloudTrail` `SNS`
 
+- 🚨 Isola a instância comprometida quando o GuardDuty encontra ameaça de severidade ≥ 7
+- 🧾 Salva o finding no S3 como evidência forense e avisa o time via SNS
 - 🔒 Auto-remediação de buckets S3 públicos
 - 🏷️ Compliance automático de tags (Centro de Custo)
 - 💰 Desligamento automático de recursos ociosos (FinOps)
+
+**📊 Números:** 6 módulos Terraform · 2 ambientes (dev/prod) · 3 ações automáticas por incidente · 0 portas SSH · 0 IPs públicos · IMDSv2 obrigatório · CloudTrail multi-região · AES-256
 
 <a href="https://github.com/kctxdev/cloudguard-aws-security">
 <img src="https://img.shields.io/badge/VER_REPOSITÓRIO-00F0FF?style=for-the-badge&logo=github&logoColor=black" alt="Repositório Cloud Guard"/>
@@ -160,7 +178,10 @@ johnata@devsecops:~$ cat now.txt
 
 - 🚫 Zero exposição de chaves no código-fonte
 - 🧩 IaC segura seguindo o menor privilégio
-- 🔁 Deploys automatizados de infraestrutura
+- 🔁 Deploys automatizados de infraestrutura a cada push
+- 🌎 Cofre de segredos criado em São Paulo (sa-east-1)
+
+**📊 Números:** 0 credenciais no código · 0 deploys manuais · validação (`terraform fmt`) obrigatória para o pipeline concluir
 
 <a href="https://github.com/kctxdev/aws-cicd-devsecops">
 <img src="https://img.shields.io/badge/VER_REPOSITÓRIO-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="Repositório Pipeline CI/CD"/>
@@ -177,8 +198,11 @@ johnata@devsecops:~$ cat now.txt
 
 `Terraform` `AWS VPC` `S3` `HCL`
 
-- 🧱 Sub-redes e security groups padronizados
-- 🛡️ Security by Design desde a concepção
+- 🧱 VPC com sub-redes, route tables e Internet Gateway
+- 🛡️ Security Group liberando apenas o tráfego essencial
+- 🔐 S3 com criptografia AES-256, versionamento e bloqueio de acesso público
+
+**📊 Números:** 100% do acesso público ao S3 bloqueado · AES-256 em repouso · versionamento ativo
 
 <a href="https://github.com/kctxdev/aws-secure-vpc-terraform">
 <img src="https://img.shields.io/badge/VER_REPOSITÓRIO-00FF9C?style=for-the-badge&logo=github&logoColor=black" alt="Repositório AWS Secure VPC"/>
@@ -192,9 +216,12 @@ johnata@devsecops:~$ cat now.txt
 
 `CloudTrail` `S3` `CloudWatch` `SNS` `Terraform`
 
-- 📈 Monitoramento contínuo de custos e eventos
-- 🔔 Alertas via SNS integrados
-- ⚙️ Foco em DevSecOps e FinOps
+- 📈 Auditoria contínua de todas as chamadas de API
+- 🪣 Bucket de logs com política restrita (só o CloudTrail grava)
+- 🔔 Alerta por e-mail via SNS quando o gasto ultrapassa o limite
+- ⚙️ Foco em DevSecOps, FinOps e compliance
+
+**📊 Números:** 100% das chamadas de API registradas · alarme de billing em US$ 10 · 1 tópico SNS de alertas
 
 <a href="https://github.com/kctxdev/aws-monitoramento-terraform">
 <img src="https://img.shields.io/badge/VER_REPOSITÓRIO-FF4F8B?style=for-the-badge&logo=github&logoColor=white" alt="Repositório AWS Monitoramento"/>
@@ -229,9 +256,12 @@ johnata@devsecops:~$ cat now.txt
 
 `Python` `pyTelegramBotAPI` `BeautifulSoup4` `SQLite3`
 
-- 🎯 Filtro Sniper contra vagas falso-positivas
-- ⚡ Cache SQLite (30 min) para respostas instantâneas
+- 🌐 Busca em Vagas.com, Indeed, InfoJobs, Catho, Trabalha Brasil e outros
+- 🎯 Filtro Sniper: a palavra-chave precisa estar no título da vaga
+- ⚡ Cache SQLite para respostas instantâneas e sem bloqueio por excesso de requisições
 - 📍 Geolocalização automática via IP
+
+**📊 Números:** 5+ sites em paralelo · cache de 30 min · resposta instantânea em buscas repetidas
 
 <a href="https://github.com/kctxdev/cacador-de-vagas-bot">
 <img src="https://img.shields.io/badge/VER_REPOSITÓRIO-26A5E4?style=for-the-badge&logo=github&logoColor=white" alt="Repositório Caçador de Vagas"/>
@@ -270,17 +300,20 @@ johnata@devsecops:~$ echo $STATUS
 
 ## 🏗️ COMO O CLOUD GUARD FUNCIONA
 
-Fluxo simplificado da remediação automática:
+Fluxo simplificado da detecção e resposta automática:
 
 ```mermaid
 %%{init: {'theme':'dark'}}%%
 flowchart LR
-    A[Evento na conta AWS] --> B[CloudTrail]
-    B --> C[EventBridge]
-    C --> D[Lambda de remediação]
-    D --> E[Bucket S3 público → privado]
-    D --> F[Tags de Centro de Custo aplicadas]
-    D --> G[Recurso ocioso desligado]
+    A[Evento na conta AWS] --> B[CloudTrail / GuardDuty]
+    B --> C[EventBridge<br/>severidade ≥ 7]
+    C --> D[Lambda de resposta]
+    D --> E[Instância isolada<br/>sem tráfego]
+    D --> F[Evidência salva no S3]
+    D --> G[Alerta via SNS]
+    D --> H[Bucket S3 público → privado]
+    D --> I[Tags de Centro de Custo aplicadas]
+    D --> J[Recurso ocioso desligado]
 ```
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
@@ -302,6 +335,16 @@ flowchart LR
 
 ## 🐍 CONTRIBUTION SNAKE
 
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake.svg" />
+  <img alt="Contribution snake" src="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
+</picture>
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8A2BE2,100:00F0FF&height=3" width="100%" alt="divider"/>
+
 ## 📡 CONECTE-SE COMIGO
 
 <div align="center">
@@ -309,11 +352,6 @@ flowchart LR
 <!-- Descomente e troque pelo seu link real do LinkedIn:
 <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank">
 <img src="https://img.shields.io/badge/LinkedIn-00F0FF?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn"/>
-</a>
--->
-<!-- Descomente e coloque o link do seu portfólio:
-<a href="https://SEU-PORTFOLIO.com" target="_blank">
-<img src="https://img.shields.io/badge/Portf%C3%B3lio-FF9900?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Portfólio"/>
 </a>
 -->
 <a href="mailto:johnataichigo56@gmail.com">
@@ -325,7 +363,9 @@ flowchart LR
 <a href="https://wa.me/5511959445413" target="_blank">
 <img src="https://img.shields.io/badge/WhatsApp-00FF9C?style=for-the-badge&logo=whatsapp&logoColor=black" alt="WhatsApp"/>
 </a>
-
+<a href="https://johnataa.vercel.app" target="_blank">
+<img src="https://img.shields.io/badge/johnata.dev-FF9900?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Portfólio johnata.dev"/>
+</a>
 <br/><br/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=2200&pause=700&color=00F0FF&center=true&vCenter=true&width=600&lines=Obrigado+pela+visita%2C+unidade+humana.;Este+perfil+%C3%A9+atualizado+continuamente.;%5BEND+OF+TRANSMISSION%5D" alt="footer message" />
