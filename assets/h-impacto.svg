@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 58" width="1200" height="58" role="img" aria-label="./impacto --resumo">
+<defs><linearGradient id="u" x1="0" x2="1"><stop offset="0" stop-color="#00FF41"/><stop offset=".55" stop-color="#00E5FF" stop-opacity=".6"/><stop offset="1" stop-color="#00E5FF" stop-opacity="0"/></linearGradient></defs>
+<style>text{font-family:'JetBrains Mono','Fira Code','Courier New',monospace}.cur{animation:b 1s steps(1) infinite}@keyframes b{50%{opacity:0}}@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<rect width="1200" height="58" fill="#000" fill-opacity="0"/>
+<text x="10" y="22" font-size="17"><tspan fill="#00E5FF">┌──(</tspan><tspan fill="#00FF41" font-weight="700">kctxdev㉿cloud</tspan><tspan fill="#00E5FF">)-[</tspan><tspan fill="#CFFFE0">~/impacto</tspan><tspan fill="#00E5FF">]</tspan></text>
+<text x="10" y="46" font-size="17" font-weight="700"><tspan fill="#00E5FF">└─</tspan><tspan fill="#FF3366">$ </tspan><tspan fill="#CFFFE0">./impacto --resumo</tspan><tspan class="cur" fill="#00FF41"> █</tspan></text>
+<rect x="0" y="54" width="1200" height="2" fill="url(#u)"/>
+</svg>

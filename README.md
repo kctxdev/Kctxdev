@@ -15,23 +15,7 @@
 
 </div>
 
-<img src="assets/divider.svg" width="100%" alt=""/>
-
-## `root@kctxdev:~# cat /etc/sobre.conf`
-
-```text
-██╗  ██╗ ██████╗████████╗██╗  ██╗██████╗ ███████╗██╗   ██╗
-██║ ██╔╝██╔════╝╚══██╔══╝╚██╗██╔╝██╔══██╗██╔════╝██║   ██║
-█████╔╝ ██║        ██║    ╚███╔╝ ██║  ██║█████╗  ██║   ██║
-██╔═██╗ ██║        ██║    ██╔██╗ ██║  ██║██╔══╝  ╚██╗ ██╔╝
-██║  ██╗╚██████╗   ██║   ██╔╝ ██╗██████╔╝███████╗ ╚████╔╝
-╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚══════╝  ╚═══╝
-
-       =[ kctxdev v1.0 — cloud security framework              ]
-+ -- --=[ 6 módulos terraform · 2 ambientes (dev e prod)         ]
-+ -- --=[ 3 ações automáticas por incidente (isolar·coletar·alertar) ]
-+ -- --=[ 0 portas SSH · 0 credenciais no código · 100% auditado ]
-```
+<img src="assets/h-sobre.svg" width="100%" alt="cat /etc/sobre.conf"/>
 
 ```text
 ┌──(root㉿kctxdev)-[~]
@@ -53,9 +37,7 @@ disponivel:  PJ / CLT em Cloud & Security
 
 > **English:** Cloud & DevSecOps engineer focused on secure-by-default AWS infrastructure, event-driven incident response and least-privilege CI/CD pipelines.
 
-<img src="assets/divider.svg" width="100%" alt=""/>
-
-## `root@kctxdev:~# ./impacto --resumo`
+<img src="assets/h-impacto.svg" width="100%" alt="./impacto --resumo"/>
 
 ```text
 SEGURANÇA
@@ -75,9 +57,7 @@ GOVERNANÇA
   alerta de custo ............ a partir de US$ 10
 ```
 
-<img src="assets/divider.svg" width="100%" alt=""/>
-
-## `root@kctxdev:~# ls -la ./projetos/`
+<img src="assets/h-projetos.svg" width="100%" alt="ls -la ./projetos/"/>
 
 ```bash
 for r in cloudguard-aws-security SentinelCloud aws-cicd-devsecops \
@@ -115,9 +95,7 @@ flowchart LR
 
 </details>
 
-<img src="assets/divider.svg" width="100%" alt=""/>
-
-## `root@kctxdev:~# nmap -sV stack`
+<img src="assets/h-stack.svg" width="100%" alt="nmap -sV stack"/>
 
 <div align="center">
 
@@ -135,9 +113,7 @@ flowchart LR
 
 </div>
 
-<img src="assets/divider.svg" width="100%" alt=""/>
-
-## `root@kctxdev:~# tail -f /var/log/andamento.log`
+<img src="assets/h-andamento.svg" width="100%" alt="tail -f /var/log/andamento.log"/>
 
 | Objetivo | Status |
 |---|---|
@@ -150,9 +126,7 @@ flowchart LR
 
 **Construindo agora:** automações de governança e FinOps na AWS e pipelines CI/CD seguros.
 
-<img src="assets/divider.svg" width="100%" alt=""/>
-
-## `root@kctxdev:~# git log --graph --all`
+<img src="assets/h-git.svg" width="100%" alt="git log --graph --all"/>
 
 <div align="center">
 
