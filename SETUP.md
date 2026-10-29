@@ -14,3 +14,20 @@ git push -u origin main
 ```
 
 Dica: se os números de "impacto" não refletirem exatamente seus projetos, ajuste o bloco `./impacto --resumo`.
+
+---
+
+## Os painéis de stats continuam com `--`?
+
+Eles só mostram dados depois que o script roda uma vez. Duas formas:
+
+**A) Pelo GitHub:** aba **Actions → Atualizar stats → Run workflow**.
+- Se a aba Actions não mostra "Atualizar stats", a pasta `.github/` não foi enviada (ela é oculta e muitos gerenciadores de arquivos pulam). Envie por `git push` ou crie o arquivo `.github/workflows/stats.yml` pelo site.
+- Se o workflow aparece com ✗ vermelho, abra o log e veja a linha `ERRO`. Confira também Settings → Actions → General → Workflow permissions = **Read and write**.
+
+**B) Pela sua máquina (mais rápido):**
+```bash
+cd kctxdev            # a pasta do repositório
+bash scripts/atualizar.sh
+```
+Funciona sem token (usa a API pública). Se você tem o `gh` logado, ele usa o token automaticamente. O script gera os dois SVGs, faz commit e dá push.

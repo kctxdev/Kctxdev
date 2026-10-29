@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Gera assets/stats.svg e assets/activity.svg a partir da API do GitHub.
 Sem dependências (só stdlib). Uso: GITHUB_TOKEN=... GH_USER=kctxdev python scripts/gen_stats.py
-Sem token, gera placeholders ("sync pendente"). Com --mock, gera dados falsos para testar o visual."""
-import os, sys, json, random, datetime, urllib.request
+Funciona com ou sem token (sem token usa a API REST pública + página de contribuições).
+Flags: --mock (dados falsos para testar o visual) e --placeholder (painéis vazios)."""
+import os, re, sys, json, random, datetime, urllib.request
 from pathlib import Path
 
 USER = os.environ.get("GH_USER", "kctxdev")
@@ -20,43 +21,93 @@ QUERY = """query($login:String!){ user(login:$login){
  contributionsCollection{ totalCommitContributions totalPullRequestContributions totalIssueContributions
    contributionCalendar{ totalContributions weeks{ contributionDays{ contributionCount date weekday } } } } } }"""
 
-def fetch():
-    req = urllib.request.Request("https://api.github.com/graphql",
-        data=json.dumps({"query": QUERY, "variables": {"login": USER}}).encode(),
-        headers={"Authorization": f"bearer {TOKEN}", "Content-Type": "application/json", "User-Agent": "kctxdev-stats"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        d = json.load(r)
-    if "errors" in d: raise SystemExit(f"GraphQL: {d['errors']}")
+def http(url, data=None, headers=None, text=False):
+    h = {"User-Agent": "kctxdev-stats", "Accept": "application/vnd.github+json"}
+    h.update(headers or {})
+    if TOKEN and "api.github.com" in url: h["Authorization"] = f"Bearer {TOKEN}"
+    with urllib.request.urlopen(urllib.request.Request(url, data=data, headers=h), timeout=30) as r:
+        b = r.read().decode("utf-8", "replace")
+    return b if text else json.loads(b)
+
+def fetch_graphql():
+    d = http("https://api.github.com/graphql", data=json.dumps({"query": QUERY, "variables": {"login": USER}}).encode(),
+             headers={"Content-Type": "application/json"})
+    if d.get("errors") or not (d.get("data") or {}).get("user"): raise RuntimeError(f"GraphQL: {d.get('errors') or 'usuário sem dados'}")
     u = d["data"]["user"]
-    langs = {}
-    stars = forks = 0
+    langs = {}; stars = forks = 0
     for n in u["repositories"]["nodes"]:
         stars += n["stargazerCount"]; forks += n["forkCount"]
         for e in n["languages"]["edges"]:
             langs[e["node"]["name"]] = langs.get(e["node"]["name"], 0) + e["size"]
     cc = u["contributionsCollection"]
-    weeks = [[(day["date"], day["contributionCount"], day["weekday"]) for day in w["contributionDays"]]
+    weeks = [[(x["date"], x["contributionCount"], x["weekday"], None) for x in w["contributionDays"]]
              for w in cc["contributionCalendar"]["weeks"]]
     return dict(repos=u["repositories"]["totalCount"], stars=stars, forks=forks, followers=u["followers"]["totalCount"],
                 commits=cc["totalCommitContributions"], prs=cc["totalPullRequestContributions"], issues=cc["totalIssueContributions"],
                 total=cc["contributionCalendar"]["totalContributions"], langs=langs, weeks=weeks)
 
+def parse_calendar(h):
+    cells = {}
+    for m in re.finditer(r'<td\b[^>]*ContributionCalendar-day[^>]*>', h):
+        t = m.group(0)
+        d = re.search(r'data-date="([^"]+)"', t); i = re.search(r'id="([^"]+)"', t); l = re.search(r'data-level="(\d)"', t)
+        if d: cells[i.group(1) if i else d.group(1)] = [d.group(1), int(l.group(1)) if l else 0, None]
+    for m in re.finditer(r'<tool-tip[^>]*for="([^"]+)"[^>]*>(.*?)</tool-tip>', h, re.S):
+        if m.group(1) in cells:
+            n = re.match(r'\s*(\d[\d,.]*)\s+contribution', m.group(2))
+            cells[m.group(1)][2] = int(re.sub(r"\D", "", n.group(1))) if n else 0
+    if not cells: raise RuntimeError("não encontrei o calendário de contribuições na página")
+    days = sorted(((datetime.date.fromisoformat(d), lv, c if c is not None else (1 if lv else 0)) for d, lv, c in cells.values()))
+    first = days[0][0] - datetime.timedelta(days=(days[0][0].weekday() + 1) % 7)  # domingo da 1ª semana
+    nweeks = (days[-1][0] - first).days // 7 + 1
+    weeks = [[] for _ in range(nweeks)]
+    for dt, lv, c in days:
+        weeks[(dt - first).days // 7].append((dt.isoformat(), c, (dt.weekday() + 1) % 7, lv))
+    m = re.search(r'([\d.,]+)\s+contributions?\s+in\s+the\s+last\s+year', h)
+    total = int(re.sub(r"\D", "", m.group(1))) if m else sum(c for _, c, _ in [(0, x[2], 0) for x in days])
+    return weeks, total
+
+def search_total(q):
+    try: return http("https://api.github.com/search/issues?q=" + q)["total_count"]
+    except Exception: return "--"
+
+def fetch_rest():
+    u = http(f"https://api.github.com/users/{USER}")
+    repos = [r for r in http(f"https://api.github.com/users/{USER}/repos?per_page=100&type=owner") if not r["fork"]]
+    langs = {}
+    for r in repos[:40]:
+        try:
+            for k, v in http(r["languages_url"]).items(): langs[k] = langs.get(k, 0) + v
+        except Exception as e: print("aviso: linguagens de", r["name"], e, file=sys.stderr)
+    weeks, total = parse_calendar(http(f"https://github.com/users/{USER}/contributions", text=True, headers={"Accept": "text/html"}))
+    return dict(repos=u["public_repos"], stars=sum(r["stargazers_count"] for r in repos), forks=sum(r["forks_count"] for r in repos),
+                followers=u["followers"], commits=total, commit_label="contribuições (12 meses)",
+                prs=search_total(f"author:{USER}+type:pr+is:public"), issues=search_total(f"author:{USER}+type:issue+is:public"),
+                total=total, langs=langs, weeks=weeks)
+
+def collect():
+    if TOKEN:
+        try:
+            d = fetch_graphql(); print("fonte: graphql"); return d
+        except Exception as e:
+            print("graphql falhou, usando REST:", e, file=sys.stderr)
+    d = fetch_rest(); print("fonte: rest + página de contribuições"); return d
+
 def mock():
     random.seed(3)
     start = datetime.date.today() - datetime.timedelta(days=370)
     start -= datetime.timedelta(days=(start.weekday() + 1) % 7)
-    weeks = []
-    d = start
+    weeks = []; d = start
     for _ in range(53):
         w = []
         for wd in range(7):
-            w.append((d.isoformat(), random.choice([0, 0, 0, 1, 2, 3, 5, 8, 12]), wd)); d += datetime.timedelta(days=1)
+            w.append((d.isoformat(), random.choice([0, 0, 0, 1, 2, 3, 5, 8, 12]), wd, None)); d += datetime.timedelta(days=1)
         weeks.append(w)
     return dict(repos=12, stars=7, forks=2, followers=9, commits=412, prs=18, issues=6,
-                total=sum(c for w in weeks for _, c, _ in w), langs={"Python": 52000, "HCL": 31000, "Java": 14000, "Shell": 6000, "HTML": 3000}, weeks=weeks)
+                total=sum(c for w in weeks for _, c, _, _ in w), langs={"Python": 52000, "HCL": 31000, "Java": 14000, "Shell": 6000, "HTML": 3000}, weeks=weeks)
 
 def placeholder():
-    weeks = [[("", 0, wd) for wd in range(7)] for _ in range(53)]
+    weeks = [[("", 0, wd, None) for wd in range(7)] for _ in range(53)]
     return dict(repos="--", stars="--", forks="--", followers="--", commits="--", prs="--", issues="--", total="--", langs={}, weeks=weeks, pending=True)
 
 BASE = ("text{font-family:" + FONT + "}@media (prefers-reduced-motion:reduce){*{animation:none!important}}")
@@ -70,7 +121,7 @@ def stats_svg(s):
     W, H = 1000, 250
     o = [pane(0, 0, 490, H, f"git shortlog — {USER}"), pane(510, 0, 490, H, "languages — por bytes")]
     rows = [("repos públicos", s["repos"], G), ("stars recebidas", s["stars"], A), ("forks", s["forks"], C),
-            ("commits (12 meses)", s["commits"], G), ("pull requests", s["prs"], P), ("issues", s["issues"], R), ("seguidores", s["followers"], C)]
+            (s.get("commit_label","commits (12 meses)"), s["commits"], G), ("pull requests", s["prs"], P), ("issues", s["issues"], R), ("seguidores", s["followers"], C)]
     for i, (k, v, c) in enumerate(rows):
         y = 64 + i * 25
         o.append(f'<text x="24" y="{y}" font-size="14" fill="{TXT}">{esc(k)}</text>')
@@ -111,7 +162,7 @@ def activity_svg(s):
     W, H = 1000, 236
     weeks = s["weeks"]; cell, step = 14, 18
     x0 = (W - len(weeks) * step + 4) / 2; y0 = 62
-    mx = max([c for w in weeks for _, c, _ in w] + [1])
+    mx = max([c for w in weeks for _, c, _, _ in w] + [1])
     def lvl(c):
         if c == 0: return 0
         r = c / mx
@@ -123,13 +174,13 @@ def activity_svg(s):
         if w and w[0][0]:
             m = int(w[0][0][5:7]) - 1
             if m != last: o.append(f'<text x="{x0+i*step:.0f}" y="{y0-8}" font-size="10" fill="{DIM}">{months[m]}</text>'); last = m
-        for d, c, wd in w:
-            l = lvl(c); x = x0 + i * step; y = y0 + wd * step
+        for d, c, wd, lv in w:
+            l = lv if lv is not None else lvl(c); x = x0 + i * step; y = y0 + wd * step
             extra = f' stroke="{G}" stroke-opacity=".9" stroke-width="1"' if l == 4 else ""
             o.append(f'<rect x="{x:.0f}" y="{y}" width="{cell}" height="{cell}" rx="3" fill="{fills[l]}"{extra}><title>{esc(d)}: {c}</title></rect>')
     gw = len(weeks) * step
     o.append(f'<g style="animation:scan 7s linear infinite"><rect x="{x0-30:.0f}" y="{y0-4}" width="36" height="{7*step+4}" fill="url(#sg)"/><rect x="{x0+4:.0f}" y="{y0-4}" width="2" height="{7*step+4}" fill="{G}" opacity=".9"/></g>')
-    days = [c for w in weeks for _, c, _ in w]
+    days = [c for w in weeks for _, c, _, _ in w]
     best, cur = streaks(days)
     tot = s["total"]
     foot = (f"{tot} contribuições · maior sequência: {best} dias · sequência atual: {cur} dias" if not s.get("pending") else "// sync pendente — rode o workflow \"Atualizar stats\"")
@@ -144,8 +195,11 @@ def activity_svg(s):
             f'<style>{css}</style>{"".join(o)}</svg>')
 
 if __name__ == "__main__":
-    data = mock() if "--mock" in sys.argv else (fetch() if TOKEN else placeholder())
+    try:
+        data = mock() if "--mock" in sys.argv else placeholder() if "--placeholder" in sys.argv else collect()
+    except Exception as e:
+        sys.exit(f"ERRO ao coletar dados do GitHub: {e}")
     OUT.mkdir(exist_ok=True)
     (OUT / "stats.svg").write_text(stats_svg(data), encoding="utf-8")
     (OUT / "activity.svg").write_text(activity_svg(data), encoding="utf-8")
-    print("ok:", "mock" if "--mock" in sys.argv else ("api" if TOKEN else "placeholder"))
+    print("ok")
