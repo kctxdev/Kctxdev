@@ -4,20 +4,31 @@
 
 <br/>
 
-![Status](https://img.shields.io/badge/status-open__to__work-00FF41?style=flat-square&labelColor=010603)
-![Local](https://img.shields.io/badge/local-Guarulhos%20%E2%80%93%20SP-00FF41?style=flat-square&labelColor=010603)
-![Contrato](https://img.shields.io/badge/contrato-PJ%20%2F%20CLT-00FF41?style=flat-square&labelColor=010603)
-![AWS](https://img.shields.io/badge/AWS%20CLF--C02-em%20prepara%C3%A7%C3%A3o-FF9900?style=flat-square&logo=amazon-aws&logoColor=white&labelColor=010603)
+![Status](https://img.shields.io/badge/status-open__to__work-00FF41?style=flat-square&labelColor=000000)
+![Local](https://img.shields.io/badge/local-Guarulhos%20%E2%80%93%20SP-00FF41?style=flat-square&labelColor=000000)
+![Contrato](https://img.shields.io/badge/contrato-PJ%20%2F%20CLT-00FF41?style=flat-square&labelColor=000000)
+![AWS](https://img.shields.io/badge/AWS%20CLF--C02-em%20prepara%C3%A7%C3%A3o-FF9900?style=flat-square&logo=amazon-aws&logoColor=white&labelColor=000000)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/SEU-USUARIO)
-[![E-mail](https://img.shields.io/badge/E--mail-010603?style=for-the-badge&logo=gmail&logoColor=00FF41)](mailto:johnataichigo56@gmail.com)
-[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-010603?style=for-the-badge&logo=googlechrome&logoColor=00FF41)](https://johnataa.vercel.app)
+[![E-mail](https://img.shields.io/badge/E--mail-000000?style=for-the-badge&logo=gmail&logoColor=00FF41)](mailto:johnataichigo56@gmail.com)
+[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-000000?style=for-the-badge&logo=googlechrome&logoColor=00FF41)](https://johnataa.vercel.app)
+
+<img src="assets/divider.svg" width="100%" alt=""/>
+
+<img src="assets/terminal.svg" width="85%" alt="Terminal com resumo do perfil"/>
 
 </div>
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-## `$ cat sobre.md`
+## `root@kctxdev:~# cat /etc/sobre.conf`
+
+```text
+┌──(root㉿kctxdev)-[~]
+└─# cat /etc/motd
+   "Segurança não é um recurso. É a fundação."
+   // mantenha o menor privilégio. assuma o vazamento. automatize a resposta.
+```
 
 Projeto e automatizo infraestrutura em nuvem em que **segurança, auditoria e custo são requisitos de arquitetura**, aplicando *Security by Design* e *Least Privilege* desde o primeiro commit.
 
@@ -32,9 +43,9 @@ disponivel:  PJ / CLT em Cloud & Security
 
 > **English:** Cloud & DevSecOps engineer focused on secure-by-default AWS infrastructure, event-driven incident response and least-privilege CI/CD pipelines.
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-## `$ ./impacto --resumo`
+## `root@kctxdev:~# ./impacto --resumo`
 
 ```text
 SEGURANÇA
@@ -54,9 +65,9 @@ GOVERNANÇA
   alerta de custo ............ a partir de US$ 10
 ```
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-## `$ ls projetos/`
+## `root@kctxdev:~# ls -la ./projetos/`
 
 ### 🛰️ CloudGuard — Detecção, Resposta a Incidentes & FinOps
 [Repositório](https://github.com/kctxdev/cloudguard-aws-security) · `Terraform` `GuardDuty` `EventBridge` `Lambda (Python)` `CloudTrail` `SNS` `SSM`
@@ -109,11 +120,15 @@ flowchart LR
 [Finance AI Voice API](https://github.com/kctxdev/NOME-DO-REPO)
 -->
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-## `$ cat stack.txt`
+## `root@kctxdev:~# nmap -sV stack`
 
 <div align="center">
+
+<img src="assets/nmap.svg" width="90%" alt="Scan nmap das habilidades"/>
+
+<br/>
 
 | Categoria | Tecnologias |
 |:---|:---|
@@ -125,9 +140,9 @@ flowchart LR
 
 </div>
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-## `$ tail -f andamento.log`
+## `root@kctxdev:~# tail -f /var/log/andamento.log`
 
 | Objetivo | Status |
 |---|---|
@@ -139,14 +154,14 @@ flowchart LR
 
 **Construindo agora:** automações de governança e FinOps na AWS e pipelines CI/CD seguros.
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-## `$ git log --graph`
+## `root@kctxdev:~# git log --graph --all`
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=kctxdev&show_icons=true&hide_border=true&bg_color=010603&title_color=00FF41&icon_color=00FF41&text_color=C9D1D9&count_private=true" alt="Estatísticas GitHub"/>
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kctxdev&layout=compact&hide_border=true&bg_color=010603&title_color=00FF41&text_color=C9D1D9" alt="Linguagens mais usadas"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=kctxdev&show_icons=true&hide_border=true&bg_color=000000&title_color=00FF41&icon_color=00FF41&text_color=C9D1D9&count_private=true" alt="Estatísticas GitHub"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kctxdev&layout=compact&hide_border=true&bg_color=000000&title_color=00FF41&text_color=C9D1D9" alt="Linguagens mais usadas"/>
 
 <br/><br/>
 
