@@ -1,0 +1,21 @@
+COMO PUBLICAR O PERFIL
+======================
+
+1. No GitHub, abra (ou crie) o repositorio PUBLICO com o mesmo nome do seu usuario: kctxdev/kctxdev
+2. Envie TODO o conteudo desta pasta para a raiz do repositorio (branch main):
+     README.md
+     assets/banner.svg
+     assets/footer.svg
+     .github/workflows/snake.yml
+   (a pasta .github e oculta em alguns sistemas; ative "mostrar arquivos ocultos")
+3. Em Settings > Actions > General > Workflow permissions, marque "Read and write permissions".
+4. Em Actions > "Generate Snake", clique em "Run workflow" uma vez.
+   Isso cria a branch "output" com a cobrinha. Depois ela se atualiza a cada 12 horas.
+5. Troque SEU-USUARIO pelo seu LinkedIn no README (2 lugares).
+6. Apague este arquivo (COMO-PUBLICAR.txt) do repositorio, se quiser.
+
+OBSERVACOES
+- Descomente o link do Finance AI Voice API no README quando o repositorio estiver publico.
+- O WhatsApp esta comentado de proposito (numero publico atrai spam). Descomente se quiser.
+- Se o GitHub mostrar a cobrinha em cor diferente do verde, nao tem problema: so o parametro
+  color_snake do workflow foi ignorado.

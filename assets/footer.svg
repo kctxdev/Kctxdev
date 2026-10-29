@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 110" width="1000" height="110">
+<defs><clipPath id="f1"><rect x="40" y="22" width="0" height="30"><animate attributeName="width" values="0;0;180;180;0" keyTimes="0;0.06;0.25;0.95;1" dur="8.0s" repeatCount="indefinite"/></rect></clipPath></defs>
+<rect width="1000" height="110" rx="10" fill="#020D05" stroke="#00FF41" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.45;1;0.45" dur="3s" repeatCount="indefinite"/></rect>
+<text x="40" y="46" font-size="18" font-family="'Courier New', Courier, monospace" font-weight="bold" clip-path="url(#f1)"><tspan fill="#00FF41">$ </tspan><tspan fill="#D1FAE5">contact --open</tspan></text>
+<text xml:space="preserve" x="40" y="78" font-size="16" font-family="'Courier New', Courier, monospace" font-weight="bold"><tspan fill="#00FF41">[ OK ] </tspan><tspan fill="#22D3EE">johnataichigo56@gmail.com</tspan><tspan fill="#6EE7B7">   ·   </tspan><tspan fill="#22D3EE">johnataa.vercel.app</tspan><tspan fill="#6EE7B7">   ·   github.com/kctxdev</tspan><animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0;0.3;0.95" dur="8.0s" repeatCount="indefinite"/></text>
+<rect x="220" y="30" width="10" height="19" fill="#00FF41"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+</svg>
