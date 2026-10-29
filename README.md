@@ -130,16 +130,11 @@ flowchart LR
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=kctxdev&show_icons=true&hide_border=true&bg_color=000000&title_color=00FF41&icon_color=00FF41&text_color=C9D1D9&count_private=true" alt="Estatísticas GitHub"/>
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kctxdev&layout=compact&hide_border=true&bg_color=000000&title_color=00FF41&text_color=C9D1D9" alt="Linguagens mais usadas"/>
+<img src="assets/stats.svg" width="100%" alt="Estatísticas e linguagens do GitHub"/>
 
-<br/><br/>
+<br/>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake.svg" />
-  <img alt="Contribution snake" src="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
-</picture>
+<img src="assets/activity.svg" width="100%" alt="Matriz de contribuições do GitHub"/>
 
 <br/><br/>
 
