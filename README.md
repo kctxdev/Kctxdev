@@ -13,15 +13,25 @@
 [![E-mail](https://img.shields.io/badge/E--mail-000000?style=for-the-badge&logo=gmail&logoColor=00FF41)](mailto:johnataichigo56@gmail.com)
 [![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-000000?style=for-the-badge&logo=googlechrome&logoColor=00FF41)](https://johnataa.vercel.app)
 
-<img src="assets/divider.svg" width="100%" alt=""/>
-
-<img src="assets/terminal.svg" width="85%" alt="Terminal com resumo do perfil"/>
-
 </div>
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
 ## `root@kctxdev:~# cat /etc/sobre.conf`
+
+```text
+██╗  ██╗ ██████╗████████╗██╗  ██╗██████╗ ███████╗██╗   ██╗
+██║ ██╔╝██╔════╝╚══██╔══╝╚██╗██╔╝██╔══██╗██╔════╝██║   ██║
+█████╔╝ ██║        ██║    ╚███╔╝ ██║  ██║█████╗  ██║   ██║
+██╔═██╗ ██║        ██║    ██╔██╗ ██║  ██║██╔══╝  ╚██╗ ██╔╝
+██║  ██╗╚██████╗   ██║   ██╔╝ ██╗██████╔╝███████╗ ╚████╔╝
+╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚══════╝  ╚═══╝
+
+       =[ kctxdev v1.0 — cloud security framework              ]
++ -- --=[ 6 módulos terraform · 2 ambientes (dev e prod)         ]
++ -- --=[ 3 ações automáticas por incidente (isolar·coletar·alertar) ]
++ -- --=[ 0 portas SSH · 0 credenciais no código · 100% auditado ]
+```
 
 ```text
 ┌──(root㉿kctxdev)-[~]
@@ -69,17 +79,28 @@ GOVERNANÇA
 
 ## `root@kctxdev:~# ls -la ./projetos/`
 
-### 🛰️ CloudGuard — Detecção, Resposta a Incidentes & FinOps
-[Repositório](https://github.com/kctxdev/cloudguard-aws-security) · `Terraform` `GuardDuty` `EventBridge` `Lambda (Python)` `CloudTrail` `SNS` `SSM`
+```bash
+for r in cloudguard-aws-security SentinelCloud aws-cicd-devsecops \
+         aws-secure-vpc-terraform aws-monitoramento-terraform cacador-de-vagas-bot
+do git clone https://github.com/kctxdev/$r; done
+```
 
-| | |
-|---|---|
-| **Problema** | Resposta manual a ameaças é lenta e inconsistente, e recursos ociosos geram custo silencioso. |
-| **Solução** | Plataforma orientada a eventos que detecta, contém e remedia riscos de segurança e de custo automaticamente. |
-| **Resultado** | Para ameaças de severidade ≥ 7: isola a instância, preserva o finding no S3 como evidência forense e alerta o time via SNS. Também remedia buckets S3 públicos, aplica tags de Centro de Custo e desliga recursos ociosos. |
+| | Repositório | O que faz | Stack |
+|:-:|:--|:--|:--|
+| 🛰️ | [**cloudguard-aws-security**](https://github.com/kctxdev/cloudguard-aws-security) | Detecta ameaça no GuardDuty e **isola a instância sozinho**, guardando a evidência no S3. | `Terraform` `Lambda` `EventBridge` |
+| 🛡️ | [**SentinelCloud**](https://github.com/kctxdev/SentinelCloud) | Scanner **somente leitura** de contas AWS: acha S3 aberto, SSH exposto e IAM admin, e mostra a correção. | `Python` `boto3` `CLI` |
+| 🔐 | [**aws-cicd-devsecops**](https://github.com/kctxdev/aws-cicd-devsecops) | Pipeline que cria um cofre no Secrets Manager a cada push, **sem nenhuma chave no código**. | `GitHub Actions` `Terraform` |
+| 🌐 | [**aws-secure-vpc-terraform**](https://github.com/kctxdev/aws-secure-vpc-terraform) | Baseline de rede e storage: VPC, Security Group mínimo e S3 criptografado, sem acesso público. | `Terraform` `VPC` `S3` |
+| 📊 | [**aws-monitoramento-terraform**](https://github.com/kctxdev/aws-monitoramento-terraform) | CloudTrail + alarme de custo (US$ 10) com alerta por e-mail. | `CloudTrail` `CloudWatch` `SNS` |
+| 🤖 | [**cacador-de-vagas-bot**](https://github.com/kctxdev/cacador-de-vagas-bot) | Bot de Telegram que busca vagas em 5+ sites, com filtro por título e cache de 30 min. | `Python` `SQLite` |
+| 🎙️ | **Finance AI Voice API** | Orçamento financeiro por comando de voz (transcrição, Tool Calling e resposta em áudio). | `Java` `Spring AI` |
+
+<!-- Descomente e coloque o link real do repositório:
+[Finance AI Voice API](https://github.com/kctxdev/NOME-DO-REPO)
+-->
 
 <details>
-<summary><b>Ver arquitetura</b></summary>
+<summary><b>$ ./cloudguard --arquitetura</b></summary>
 
 ```mermaid
 %%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#06210E','primaryTextColor':'#00FF41','lineColor':'#22D3EE','primaryBorderColor':'#00FF41'}}}%%
@@ -90,35 +111,9 @@ flowchart LR
     D --> E[Instância isolada]
     D --> F[Evidência no S3]
     D --> G[Alerta via SNS]
-    D --> H[S3 público → privado]
-    D --> I[Tags de Centro de Custo]
-    D --> J[Recurso ocioso desligado]
 ```
 
 </details>
-
-### 🔐 Pipeline CI/CD DevSecOps
-[Repositório](https://github.com/kctxdev/aws-cicd-devsecops) · `GitHub Actions` `Terraform` `Secrets Manager` `IAM`
-
-| | |
-|---|---|
-| **Problema** | Chaves estáticas em código ou em secrets de CI são um vetor recorrente de vazamento. |
-| **Solução** | Esteira com IaC de menor privilégio, segredos no Secrets Manager (sa-east-1) e deploy automático a cada push. |
-| **Resultado** | 0 credenciais no código, 0 deploys manuais e `terraform fmt` obrigatório para o pipeline concluir. |
-
-### 🌐 AWS Secure VPC · 📊 AWS Monitoramento
-[aws-secure-vpc-terraform](https://github.com/kctxdev/aws-secure-vpc-terraform) · [aws-monitoramento-terraform](https://github.com/kctxdev/aws-monitoramento-terraform)
-
-- **Baseline de rede e storage:** VPC com sub-redes, route tables, Internet Gateway e Security Group restrito; S3 com AES-256, versionamento e bloqueio total de acesso público.
-- **Auditoria e custo:** CloudTrail com 100% das chamadas de API registradas, bucket de logs com política restrita (só o CloudTrail grava) e alarme de billing em US$ 10 com e-mail via SNS.
-
-### 🤖 Caçador de Vagas Pro · 🎙️ Finance AI Voice API
-- [cacador-de-vagas-bot](https://github.com/kctxdev/cacador-de-vagas-bot) · `Python` `BeautifulSoup4` `SQLite`: agrega vagas de 5+ sites em paralelo, com filtro por título, geolocalização via IP e cache de 30 min para respostas instantâneas.
-- **Finance AI Voice API** · `Java` `Spring Boot` `Spring AI`: orçamento financeiro por comando de voz, com transcrição, *Tool Calling* e resposta em áudio.
-
-<!-- Descomente e coloque o link real do repositório:
-[Finance AI Voice API](https://github.com/kctxdev/NOME-DO-REPO)
--->
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
@@ -150,6 +145,7 @@ flowchart LR
 | Terraform avançado (módulos) | 🟡 Em andamento |
 | Kubernetes & Container Security | 🟡 Em andamento |
 | Certificação em Segurança da Informação | 🟡 Em andamento |
+| SentinelCloud (scanner CSPM AWS) | 🟢 Publicado |
 | Java + Spring Boot com IA | 🟢 Explorando |
 
 **Construindo agora:** automações de governança e FinOps na AWS e pipelines CI/CD seguros.
