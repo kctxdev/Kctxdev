@@ -9,7 +9,7 @@
 ![Contrato](https://img.shields.io/badge/contrato-PJ%20%2F%20CLT-00FF41?style=flat-square&labelColor=000000)
 ![AWS](https://img.shields.io/badge/AWS%20CLF--C02-em%20prepara%C3%A7%C3%A3o-FF9900?style=flat-square&logo=amazon-aws&logoColor=white&labelColor=000000)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/SEU-USUARIO)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johnata-siilva)
 [![E-mail](https://img.shields.io/badge/E--mail-000000?style=for-the-badge&logo=gmail&logoColor=00FF41)](mailto:johnataichigo56@gmail.com)
 [![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-000000?style=for-the-badge&logo=googlechrome&logoColor=00FF41)](https://johnataa.vercel.app)
 
