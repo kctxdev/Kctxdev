@@ -56,7 +56,7 @@ def parse_calendar(h):
         if m.group(1) in cells:
             n = re.match(r'\s*(\d[\d,.]*)\s+contribution', m.group(2))
             cells[m.group(1)][2] = int(re.sub(r"\D", "", n.group(1))) if n else 0
-    if not cells: raise RuntimeError("não encontrei o calendário de contribuições na página")
+    if not cells: raise RuntimeError("não encontrei o calendário de contribuições na página. Início da resposta: " + re.sub(r"\s+", " ", h)[:200])
     days = sorted(((datetime.date.fromisoformat(d), lv, c if c is not None else (1 if lv else 0)) for d, lv, c in cells.values()))
     first = days[0][0] - datetime.timedelta(days=(days[0][0].weekday() + 1) % 7)  # domingo da 1ª semana
     nweeks = (days[-1][0] - first).days // 7 + 1
