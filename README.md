@@ -134,7 +134,13 @@ flowchart LR
 
 <br/>
 
-<img src="assets/activity.svg" width="100%" alt="Matriz de contribuições do GitHub"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake.svg" />
+  <img alt="Worm devorando as contribuições" src="https://raw.githubusercontent.com/kctxdev/kctxdev/output/github-contribution-grid-snake-dark.svg" />
+</picture>
+
+`worm.exe --target=contributions --stealth`
 
 <br/><br/>
 
